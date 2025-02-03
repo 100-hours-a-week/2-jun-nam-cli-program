@@ -7,7 +7,7 @@ Week1의 과제로 간단한 Console 입력 기반의 프로그램을 작성
 <br>
 
 # 클래스 다이어그램
-![Image](https://github.com/user-attachments/assets/48fe113b-163b-432e-adc5-701e1d86937a)
+![Image](https://github.com/user-attachments/assets/88ba49ce-4ee6-45d6-b890-928fffae0eac)
 
 <br>
 <br>
