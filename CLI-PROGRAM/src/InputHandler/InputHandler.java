@@ -81,6 +81,7 @@ public class InputHandler {
         float selection;
 
         while(true){
+            System.out.print("You pay - $");
             try{
                 selection = scanner.nextFloat();
 
@@ -93,7 +94,6 @@ public class InputHandler {
             catch(Exception e){
                 System.out.println(e.getMessage());
                 scanner.nextLine();
-                System.out.print("Your Input - ");
             }
         }
         return selection - amount;

@@ -67,8 +67,9 @@ public class MenuManager {
             userinfo.printCartItems();
             System.out.println("-------------------------\n");
         }
-        System.out.print("Amount you have to pay : ");
-        System.out.println(userinfo.getTotalBill());
+        System.out.print("Amount you have to pay : $");
+        float amount = userinfo.getTotalBill();
+        System.out.println(amount);
         return userinfo.getTotalBill();
     }
 }

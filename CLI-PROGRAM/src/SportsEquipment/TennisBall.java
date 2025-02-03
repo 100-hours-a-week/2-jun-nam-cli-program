@@ -14,8 +14,8 @@ public class TennisBall extends Ball{
     public void printInfo() {
         System.out.println("Name: " + super.name);
         System.out.println("Category: " + super.category);
-        System.out.println("Price: " + super.price);
-        System.out.println("Diameter: " + super.diameter);
+        System.out.println("Price: $" + super.price);
+        System.out.println("Diameter: " + super.diameter + "cm");
         System.out.println("SportsType: " + this.sportsType);
     }
 }

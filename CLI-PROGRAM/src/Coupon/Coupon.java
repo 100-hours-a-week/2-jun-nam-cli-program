@@ -5,7 +5,7 @@ public class Coupon {
     public int discountAmount;
     public Coupon(){
         double randomValue = Math.random();
-        String[] categories = {"Ball", "Bat"};
+        String[] categories = {"Ball", "StrikingImplement"};
         int type = (int)(randomValue* categories.length);
         this.couponType = categories[type];
         int amount = (int)(randomValue*3) + 1;

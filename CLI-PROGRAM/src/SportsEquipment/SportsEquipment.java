@@ -24,7 +24,9 @@ public class SportsEquipment {
     public float getPrice(){
         return this.price;
     }
-
+    public void setPrice(float price){
+        this.price = price;
+    }
     public void printInfo(){
 
     }

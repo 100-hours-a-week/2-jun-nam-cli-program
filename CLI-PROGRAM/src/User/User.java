@@ -21,7 +21,7 @@ public class User {
     }
 
     public void printCoupon(){
-        System.out.println(getUserCoupon().couponType + " " + getUserCoupon().discountAmount);
+        System.out.println(getUserCoupon().couponType + " " + getUserCoupon().discountAmount + "%");
     }
     public void addToCart(SportsEquipment item){
         this.cart.add(item);
@@ -33,6 +33,7 @@ public class User {
         for (SportsEquipment sportsEquipment : cart) {
             System.out.println(cnt + ".");
             sportsEquipment.printInfo();
+            System.out.println();
             cnt++;
         }
     }
@@ -57,6 +58,7 @@ public class User {
         return this.redeemedCoupon;
     }
 
+
     public boolean hasCouponAvailableItem(){
         for (SportsEquipment sportsEquipment : cart) {
             if(this.getCouponType().equals(sportsEquipment.getCategory()))
@@ -65,6 +67,12 @@ public class User {
         return false;
     }
 
+    public void applyCoupon(int index){
+        float price = this.cart.get(index).getPrice();
+        price =  Math.round(((100 - this.redeemedCoupon.discountAmount) * price)) / 100.0f;
+        cart.get(index).setPrice(price);
+        System.out.println(price + " " + cart.get(index).getPrice());
+    }
     public String getCartItemCategory(int index){
         return this.cart.get(index).getCategory();
     }

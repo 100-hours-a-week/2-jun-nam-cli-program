@@ -43,14 +43,13 @@ public class Main {
                                     UserInput = inputHandler.purchaseMenuHandler(userinfo.getCartSize());
 
                                     flag = userinfo.getCartItemCategory(UserInput-1).equals(userinfo.getCouponType());
-//                                    System.out.println(flag);
-//                                    System.out.println(sportsEquipmentManager.getEquipmentCategory(UserInput-1) + " " + userinfo.getCouponType());
                                     if(!flag){
+                                        System.out.println("Inappropriate item");
                                         userinfo.getCouponAvailableItem(userinfo.getCouponType());
 
                                     }
                                     else {
-                                        sportsEquipmentManager.applyCoupon(userinfo.getUserCoupon(), UserInput-1);
+                                        userinfo.applyCoupon(UserInput-1);
                                         break;
                                     }
                                 }
@@ -58,7 +57,8 @@ public class Main {
                             }
                             float totalPrice = menuManager.showPriceMenu(userinfo);
                             float charge = inputHandler.priceHandler(totalPrice);
-                            System.out.println("Your Charge is : " + charge + ". Have a nice day!");
+                            charge = Math.round(charge * 100) / 100.0f;
+                            System.out.println("\nYour Change is : $" + charge + ". Have a nice day!");
                         }
                         break;
                     }
