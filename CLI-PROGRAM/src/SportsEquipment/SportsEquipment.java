@@ -1,14 +1,14 @@
 package SportsEquipment;
-
-public class SportsEquipment {
+import Category.Category;
+abstract public class SportsEquipment {
     String name;
-    String category;
+    Category category;
     float price;
 
     public SportsEquipment(){
 
     }
-    public SportsEquipment(String name, String category, float price) {
+    public SportsEquipment(String name, Category category, float price) {
       this.name = name;
       this.category = category;
       this.price = price;
@@ -18,7 +18,7 @@ public class SportsEquipment {
         return this.name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return this.category;
     }
     public float getPrice(){
@@ -27,7 +27,5 @@ public class SportsEquipment {
     public void setPrice(float price){
         this.price = price;
     }
-    public void printInfo(){
-
-    }
+    abstract public void printInfo();
 }

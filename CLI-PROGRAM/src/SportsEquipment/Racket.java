@@ -1,8 +1,8 @@
 package SportsEquipment;
-
+import Category.Category;
 public class Racket extends StrikingImplement{
     String sportsType;
-    public Racket(String name, String category, float price, float length, String material, String type, String sportsType){
+    public Racket(String name, Category category, float price, float length, String material, String type, String sportsType){
         super.name = name;
         super.category = category;
         super.price = price;

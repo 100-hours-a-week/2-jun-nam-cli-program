@@ -1,6 +1,8 @@
 package User;
 
 import java.util.ArrayList;
+
+import Category.Category;
 import SportsEquipment.*;
 import Coupon.*;
 public class User {
@@ -21,7 +23,7 @@ public class User {
     }
 
     public void printCoupon(){
-        System.out.println(getUserCoupon().couponType + " " + getUserCoupon().discountAmount + "%");
+        System.out.println(getUserCoupon().getCouponType().toString() + " " + getUserCoupon().discountAmount + "%");
     }
     public void addToCart(SportsEquipment item){
         this.cart.add(item);
@@ -46,7 +48,7 @@ public class User {
         return sum;
     }
 
-    public String getCouponType(){
+    public Category getCouponType(){
         return redeemedCoupon.getCouponType();
     }
 
@@ -69,18 +71,18 @@ public class User {
 
     public void applyCoupon(int index){
         float price = this.cart.get(index).getPrice();
-        price =  Math.round(((100 - this.redeemedCoupon.discountAmount) * price)) / 100.0f;
-        cart.get(index).setPrice(price);
+        float priceAfterDiscount =  Math.round(((100 - this.redeemedCoupon.discountAmount) * price)) / 100.0f;
+        cart.get(index).setPrice(priceAfterDiscount);
         System.out.println(price + " " + cart.get(index).getPrice());
     }
-    public String getCartItemCategory(int index){
+    public Category getCartItemCategory(int index){
         return this.cart.get(index).getCategory();
     }
 
-    public void getCouponAvailableItem(String type){
+    public void getCouponAvailableItem(Category type){
         int cnt = 1;
         for (SportsEquipment sportsEquipment : cart) {
-            if(sportsEquipment.getCategory().equals(type)){
+            if(sportsEquipment.getCategory() == type){
                 System.out.println(cnt + ".");
                 sportsEquipment.printInfo();
                 cnt++;

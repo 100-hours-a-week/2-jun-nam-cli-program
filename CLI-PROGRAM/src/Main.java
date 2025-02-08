@@ -42,7 +42,7 @@ public class Main {
                                 while(true){
                                     UserInput = inputHandler.purchaseMenuHandler(userinfo.getCartSize());
 
-                                    flag = userinfo.getCartItemCategory(UserInput-1).equals(userinfo.getCouponType());
+                                    flag = userinfo.getCartItemCategory(UserInput-1) == userinfo.getCouponType();
                                     if(!flag){
                                         System.out.println("Inappropriate item");
                                         userinfo.getCouponAvailableItem(userinfo.getCouponType());

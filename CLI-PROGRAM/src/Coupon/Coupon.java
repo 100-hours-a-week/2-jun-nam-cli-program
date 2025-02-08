@@ -1,12 +1,15 @@
 package Coupon;
 
+import Category.Category;
+
 public class Coupon {
-    public String couponType;
+    Category couponType;
+
     public int discountAmount;
     public Coupon(){
         double randomValue = Math.random();
-        String[] categories = {"Ball", "StrikingImplement"};
-        int type = (int)(randomValue* categories.length);
+        int type = (int)(randomValue * Category.values().length);
+        Category[] categories = Category.values();
         this.couponType = categories[type];
         int amount = (int)(randomValue*3) + 1;
         this.discountAmount = amount * 10;
@@ -15,7 +18,7 @@ public class Coupon {
         System.out.println(this.couponType + "\n" + discountAmount);
     }
 
-    public String getCouponType(){
+    public Category getCouponType(){
         return this.couponType;
     }
 }

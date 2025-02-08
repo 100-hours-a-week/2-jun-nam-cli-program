@@ -1,10 +1,10 @@
 package SportsEquipment;
-
+import Category.Category;
 public class TennisBall extends Ball{
     public TennisBall(){
 
     }
-    public TennisBall(String name, String category, float price, float diameter, String sportsType){
+    public TennisBall(String name, Category category, float price, float diameter, String sportsType){
         super.name = name;
         super.category = category;
         super.price = price;
